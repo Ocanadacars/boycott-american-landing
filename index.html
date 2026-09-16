@@ -1,99 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Looking for Canadian-Made Vehicles?</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      background: #FFFFFF;
-      color: #0D0D0D;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-    
-    .container {
-      max-width: 600px;
-      text-align: center;
-    }
-    
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      color: #A8001C;
-      line-height: 1.2;
-    }
-    
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #3A3A3A;
-      margin-bottom: 2rem;
-    }
-    
-    .cta-button {
-      display: inline-block;
-      background-color: #A8001C;
-      color: white;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 150ms ease;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    
-    .cta-button:hover {
-      background-color: #7A0015;
-    }
-    
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #6B6B6B;
-    }
-    
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#141311" />
+<meta name="description" content="Looking for Canadian-built vehicles? Find every option scored and ranked by Canadian manufacturing content at O Canada Cars." />
+<title>Elbows Up. Eyes Open. — O Canada Cars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --crimson:#A8001C;--crimson-dark:#7A0015;--crimson-light:#C8102E;
+  --ink:#141311;--ink-2:#2E2B27;--ink-3:#4A4640;--ink-4:#716B62;
+  --line:#E8E3DC;--paper:#FAF7F2;
+  --good:#1F7A3A;--mid:#B0820F;--bad:#A8001C;
+  --f-head:'Fraunces',Georgia,serif;
+  --f-body:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f-body);color:rgba(255,255,255,.7);background:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-head);font-weight:800;line-height:1.1;letter-spacing:-0.02em}
+a{text-decoration:none}
+.container{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem)}
+
+/* NAV */
+.nav{height:56px;background:rgba(20,19,17,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center}
+.nav__inner{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem);width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-head);font-weight:800;font-size:1rem;color:rgba(255,255,255,.85)}
+.nav__logo em{color:var(--crimson-light);font-style:normal}
+.nav__back{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.04em;transition:color 150ms}
+.nav__back:hover{color:rgba(255,255,255,.8)}
+
+/* HERO */
+.hero{padding:4rem 0 3rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
+.hero__flag{font-size:3rem;margin-bottom:1.25rem;display:block}
+.hero__slogan{font-family:var(--f-head);font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;margin-bottom:.4rem}
+.hero__slogan em{color:var(--crimson-light);font-style:normal}
+.hero__sub{font-size:1rem;color:rgba(255,255,255,.45);margin-top:1rem;max-width:40ch;margin-left:auto;margin-right:auto;line-height:1.65}
+
+/* BODY SECTIONS */
+.section{padding:2.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.section p{font-size:.97rem;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:1rem}
+.section p:last-child{margin-bottom:0}
+.section h2{font-family:var(--f-head);font-size:1.2rem;font-weight:800;color:rgba(255,255,255,.9);margin-bottom:.85rem;letter-spacing:-0.01em}
+
+/* SCORE TIERS */
+.tiers{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.tier{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px}
+.tier__dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--f-head);font-weight:800;font-size:.8rem;color:#fff;flex-shrink:0}
+.tier__dot.green{background:var(--good)}
+.tier__dot.amber{background:var(--mid)}
+.tier__dot.red{background:var(--bad)}
+.tier__text{font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.4}
+.tier__text strong{color:rgba(255,255,255,.8);font-weight:600;display:block;margin-bottom:.1rem}
+
+/* FILTER CALLOUT — informational, not a big CTA */
+.filter-note{margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(168,0,28,.08);border:1px solid rgba(168,0,28,.2);border-radius:8px}
+.filter-note p{font-size:.85rem;color:rgba(255,255,255,.55);margin:0;line-height:1.6}
+.filter-note strong{color:rgba(255,255,255,.75)}
+
+/* MAIN LINK — subdued, not a big button */
+.go-section{padding:2.5rem 0;text-align:center}
+.go-section p{font-size:.9rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+.go-btn{display:inline-block;padding:.85rem 2rem;background:var(--crimson);color:#fff;font-family:var(--f-head);font-weight:800;font-size:1rem;border-radius:8px;letter-spacing:-0.01em;transition:all 160ms}
+.go-btn:hover{background:var(--crimson-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(168,0,28,.3)}
+
+/* FOOTER */
+.footer{background:#0D0C0B;padding:1.75rem 0;border-top:1px solid rgba(255,255,255,.05)}
+.footer__inner{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer__copy{font-size:.72rem;color:rgba(255,255,255,.2)}
+.footer__link{font-size:.72rem;color:rgba(255,255,255,.25);transition:color 150ms}
+.footer__link:hover{color:rgba(255,255,255,.7)}
+@media(max-width:480px){.footer__inner{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://ocanadacars.ca" class="nav__logo"><svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#A8001C"/><path d="M14 5.5 L13.2 8.5 L11.2 7.8 L12.2 11 L10 9.8 L9 11.3 L6.5 10.7 L7.2 12.8 L6 13.8 L9.8 16 L9.3 17.8 L13.3 17.3 L13.3 22 L14.7 22 L14.7 17.3 L18.7 17.8 L18.2 15.9 L22 13.8 L20.8 12.8 L21.5 10.7 L19 11.3 L18 9.8 L15.8 11 L16.8 7.8 L14.8 8.5 Z" fill="#fff"/></svg> O <em>Canada</em> Cars</a>
+    <a href="https://ocanadacars.ca" class="nav__back">← Main site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
   <div class="container">
-    <h1>Looking for Canadian-Made Vehicles?</h1>
-    
-    <p>Canadians are thinking carefully about where their vehicle dollars go. We built a tool that makes it easy to find vehicles actually built in Canada.</p>
-    
-    <p>See exactly where your next vehicle is assembled, how much Canadian content it contains, and which manufacturers support Canadian jobs.</p>
-    
-    <a href="https://ocanadacars.ca" class="cta-button">See the O Canada Score</a>
-    
-    <div class="footer">
-      <p>Independent vehicle origin ratings for Canadian buyers.</p>
+    <span class="hero__flag">🇨🇦</span>
+    <h1 class="hero__slogan">Elbows Up.<br><em>Eyes Open.</em></h1>
+    <p class="hero__sub">The frustration is fair. Here's what we built to help.</p>
+  </div>
+</section>
+
+<!-- WHAT THE SITE IS -->
+<section class="section">
+  <div class="container">
+    <h2>What O Canada Cars does</h2>
+    <p>We score every vehicle sold in Canada out of 100 based on where it was actually built and where its major parts came from. Final assembly location, North American content percentage, engine origin, transmission origin — all pulled from public government data and combined into one transparent number.</p>
+    <p>No agenda. No guessing. You can read the full methodology on the site. The data sources are cited. The formula is published.</p>
+  </div>
+</section>
+
+<!-- HOW THE SCORE WORKS -->
+<section class="section">
+  <div class="container">
+    <h2>How the score breaks down</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tier__dot green">75+</div>
+        <div class="tier__text">
+          <strong>Strong Canadian connection</strong>
+          Typically assembled in Canada — Oshawa, Cambridge, Alliston, Windsor. High North American parts content.
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier__dot amber">50–74</div>
+        <div class="tier__text">
+          <strong>Mixed</strong>
+          Assembled in the US or Mexico under CUSMA, with meaningful North American supply chain involvement.
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier__dot red">0–49</div>
+        <div class="tier__text">
+          <strong>Limited Canadian connection</strong>
+          Primarily overseas assembly and parts. Low North American content.
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter option — informational, not pushy -->
+    <div class="filter-note">
+      <p>Once you're on the site, there's an option to <strong>exclude US-assembled vehicles from your results entirely</strong> if that's where you're at right now. It's a toggle — your call, not the default.</p>
     </div>
   </div>
+</section>
+
+<!-- GO TO SITE -->
+<section class="go-section">
+  <div class="container">
+    <p>3,700+ vehicles scored. Updated from public government data. Free to use.</p>
+    <a href="https://ocanadacars.ca" class="go-btn">Go to O Canada Cars →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__copy">© 2026 O Canada Cars · OCanadaCars.ca</span>
+    <span>
+      <a href="https://ocanadacars.ca/methodology.html" class="footer__link">Methodology</a>
+      &nbsp;·&nbsp;
+      <a href="https://ocanadacars.ca/disclaimer.html" class="footer__link">Disclaimer</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
