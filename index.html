@@ -1,169 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-CA">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#141311" />
-<meta name="description" content="Looking for Canadian-built vehicles? Find every option scored and ranked by Canadian manufacturing content at O Canada Cars." />
-<title>Elbows Up. Eyes Open. — O Canada Cars</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#D9261C">
+<meta name="description" content="Compare vehicle model-year records by assembly, combined U.S./Canadian parts content, engine or motor origin, and transmission origin.">
+<title>Compare vehicle origins · O Canada Cars</title>
+<link rel="canonical" href="https://boycottamericancars.ca/">
+<link rel="alternate" hreflang="en-CA" href="https://boycottamericancars.ca/">
+<link rel="alternate" hreflang="fr-CA" href="https://boycottamericancars.ca/index-fr.html">
+<link rel="alternate" hreflang="x-default" href="https://boycottamericancars.ca/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --crimson:#A8001C;--crimson-dark:#7A0015;--crimson-light:#C8102E;
-  --ink:#141311;--ink-2:#2E2B27;--ink-3:#4A4640;--ink-4:#716B62;
-  --line:#E8E3DC;--paper:#FAF7F2;
-  --good:#1F7A3A;--mid:#B0820F;--bad:#A8001C;
-  --f-head:'Fraunces',Georgia,serif;
-  --f-body:'Inter',system-ui,sans-serif;
-}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--f-body);color:rgba(255,255,255,.7);background:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--f-head);font-weight:800;line-height:1.1;letter-spacing:-0.02em}
-a{text-decoration:none}
-.container{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem)}
-
-/* NAV */
-.nav{height:56px;background:rgba(20,19,17,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center}
-.nav__inner{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem);width:100%;display:flex;align-items:center;justify-content:space-between}
-.nav__logo{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-head);font-weight:800;font-size:1rem;color:rgba(255,255,255,.85)}
-.nav__logo em{color:var(--crimson-light);font-style:normal}
-.nav__back{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.04em;transition:color 150ms}
-.nav__back:hover{color:rgba(255,255,255,.8)}
-
-/* HERO */
-.hero{padding:4rem 0 3rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
-.hero__flag{font-size:3rem;margin-bottom:1.25rem;display:block}
-.hero__slogan{font-family:var(--f-head);font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;margin-bottom:.4rem}
-.hero__slogan em{color:var(--crimson-light);font-style:normal}
-.hero__sub{font-size:1rem;color:rgba(255,255,255,.45);margin-top:1rem;max-width:40ch;margin-left:auto;margin-right:auto;line-height:1.65}
-
-/* BODY SECTIONS */
-.section{padding:2.5rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.section p{font-size:.97rem;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:1rem}
-.section p:last-child{margin-bottom:0}
-.section h2{font-family:var(--f-head);font-size:1.2rem;font-weight:800;color:rgba(255,255,255,.9);margin-bottom:.85rem;letter-spacing:-0.01em}
-
-/* SCORE TIERS */
-.tiers{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
-.tier{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px}
-.tier__dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--f-head);font-weight:800;font-size:.8rem;color:#fff;flex-shrink:0}
-.tier__dot.green{background:var(--good)}
-.tier__dot.amber{background:var(--mid)}
-.tier__dot.red{background:var(--bad)}
-.tier__text{font-size:.86rem;color:rgba(255,255,255,.55);line-height:1.4}
-.tier__text strong{color:rgba(255,255,255,.8);font-weight:600;display:block;margin-bottom:.1rem}
-
-/* FILTER CALLOUT — informational, not a big CTA */
-.filter-note{margin-top:1.5rem;padding:1rem 1.25rem;background:rgba(168,0,28,.08);border:1px solid rgba(168,0,28,.2);border-radius:8px}
-.filter-note p{font-size:.85rem;color:rgba(255,255,255,.55);margin:0;line-height:1.6}
-.filter-note strong{color:rgba(255,255,255,.75)}
-
-/* MAIN LINK — subdued, not a big button */
-.go-section{padding:2.5rem 0;text-align:center}
-.go-section p{font-size:.9rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
-.go-btn{display:inline-block;padding:.85rem 2rem;background:var(--crimson);color:#fff;font-family:var(--f-head);font-weight:800;font-size:1rem;border-radius:8px;letter-spacing:-0.01em;transition:all 160ms}
-.go-btn:hover{background:var(--crimson-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(168,0,28,.3)}
-
-/* FOOTER */
-.footer{background:#0D0C0B;padding:1.75rem 0;border-top:1px solid rgba(255,255,255,.05)}
-.footer__inner{max-width:640px;margin:0 auto;padding:0 clamp(1rem,5vw,2rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-.footer__copy{font-size:.72rem;color:rgba(255,255,255,.2)}
-.footer__link{font-size:.72rem;color:rgba(255,255,255,.25);transition:color 150ms}
-.footer__link:hover{color:rgba(255,255,255,.7)}
-@media(max-width:480px){.footer__inner{flex-direction:column;align-items:flex-start}}
+:root{--red:#D9261C;--red-dark:#B51F18;--ink:#17181A;--muted:#59616B;--line:#DDE1E5;--paper:#F4F5F6;--white:#fff;--green:#246B3C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Public Sans",Arial,sans-serif}
+a{color:var(--red-dark);text-underline-offset:3px}
+a:hover{color:var(--red)}
+.wrap{width:min(100% - 2rem,760px);margin-inline:auto}
+.site-header{background:var(--white);border-bottom:1px solid var(--line)}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.45rem;color:var(--ink);font:800 1.05rem/1 "Archivo",Arial,sans-serif;text-decoration:none;white-space:nowrap}
+.brand em{color:var(--red);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:1rem;font-size:.85rem;font-weight:600}
+.nav-links a{text-decoration:none}
+main{padding-bottom:3rem}
+.hero{background:var(--white);border-bottom:1px solid var(--line);padding:clamp(2.5rem,8vw,5rem) 0 3rem}
+.eyebrow{margin:0 0 .6rem;color:var(--red-dark);font-weight:700;font-size:.86rem}
+h1,h2,h3{font-family:"Archivo",Arial,sans-serif;line-height:1.15;letter-spacing:-.025em}
+h1{font-size:clamp(2rem,7vw,3.5rem);margin:0;max-width:18ch}
+.lede{font-size:clamp(1.05rem,2.5vw,1.2rem);color:#41474E;max-width:62ch;margin:1rem 0 0}
+.section{padding:2.25rem 0;border-bottom:1px solid var(--line)}
+h2{font-size:1.55rem;margin:0 0 .75rem}
+p{margin:.65rem 0}
+.muted{color:var(--muted)}
+.factors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1.25rem 0}
+.factor{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1rem;min-width:0}
+.factor strong{display:block;font:700 1rem/1.3 "Archivo",Arial,sans-serif}
+.points{color:var(--red-dark);font-weight:700;white-space:nowrap}
+.callout{background:var(--white);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:1rem 1.15rem;margin:1.2rem 0}
+.actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.25rem}
+.button{display:inline-block;max-width:100%;padding:.8rem 1.15rem;border-radius:7px;background:var(--red);color:var(--white);font-weight:700;text-decoration:none;text-align:center}
+.button:hover{background:var(--red-dark);color:var(--white)}
+.site-footer{background:var(--ink);color:#E7E9EB;padding:1.5rem 0}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.site-footer a{color:#fff}
+@media(max-width:520px){.nav{min-height:60px;gap:.5rem}.nav-links{gap:.6rem;font-size:.8rem}.factors{grid-template-columns:1fr}.footer-row{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="https://ocanadacars.ca" class="nav__logo"><svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#A8001C"/><path d="M14 5.5 L13.2 8.5 L11.2 7.8 L12.2 11 L10 9.8 L9 11.3 L6.5 10.7 L7.2 12.8 L6 13.8 L9.8 16 L9.3 17.8 L13.3 17.3 L13.3 22 L14.7 22 L14.7 17.3 L18.7 17.8 L18.2 15.9 L22 13.8 L20.8 12.8 L21.5 10.7 L19 11.3 L18 9.8 L15.8 11 L16.8 7.8 L14.8 8.5 Z" fill="#fff"/></svg> O <em>Canada</em> Cars</a>
-    <a href="https://ocanadacars.ca" class="nav__back">← Main site</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <span class="hero__flag">🇨🇦</span>
-    <h1 class="hero__slogan">Elbows Up.<br><em>Eyes Open.</em></h1>
-    <p class="hero__sub">There's a way to fight back. It's through your wallet.</p>
-  </div>
-</section>
-
-<!-- WHAT THE SITE IS -->
-<section class="section">
-  <div class="container">
-    <h2>What O Canada Cars does</h2>
-    <p>Cars are one of the biggest purchases you'll ever make. Where that money goes — whether it supports Canadian jobs, Canadian manufacturing, Canadian workers — matters. A lot.</p>
-    <p>Most people don't know where their money actually goes when they buy a vehicle. The marketing doesn't tell you. The dealership won't break it down for you. So you end up guessing, or just accepting whatever's on the lot.</p>
-    <p>We built O Canada Cars to change that. Every vehicle sold in Canada, scored out of 100 based on where it's actually built and where its parts come from. Final assembly location, North American content, engine origin, transmission origin — all pulled from public government data. All transparent. All published so you can see exactly how it works.</p>
-  </div>
-</section>
-
-<!-- HOW THE SCORE WORKS -->
-<section class="section">
-  <div class="container">
-    <h2>How the score breaks down</h2>
-    <div class="tiers">
-      <div class="tier">
-        <div class="tier__dot green">75+</div>
-        <div class="tier__text">
-          <strong>Strong Canadian connection</strong>
-          Typically assembled in Canada — Oshawa, Cambridge, Alliston, Windsor. High North American parts content.
-        </div>
-      </div>
-      <div class="tier">
-        <div class="tier__dot amber">50–74</div>
-        <div class="tier__text">
-          <strong>Mixed</strong>
-          Assembled in the US or Mexico under CUSMA, with meaningful North American supply chain involvement.
-        </div>
-      </div>
-      <div class="tier">
-        <div class="tier__dot red">0–49</div>
-        <div class="tier__text">
-          <strong>Limited Canadian connection</strong>
-          Primarily overseas assembly and parts. Low North American content.
-        </div>
-      </div>
-    </div>
-
-    <!-- Filter option — informational, not pushy -->
-    <div class="filter-note">
-      <p>Once you're on the site, there's an option to <strong>exclude US-assembled vehicles from your results entirely</strong> if that's where you're at right now. It's a toggle — your call, not the default.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CLOSING -->
-<section class="section">
-  <div class="container">
-    <p>When you know the numbers, you can actually make your money count. You can choose to support Canadian manufacturing. You can put your purchase power behind the jobs and industries that matter to Canada. It's not just a car decision — it's a Canadian decision.</p>
-  </div>
-</section>
-
-<!-- GO TO SITE -->
-<section class="go-section">
-  <div class="container">
-    <p>3,200+ vehicles scored. No spin. No compromise.</p>
-    <a href="https://ocanadacars.ca" class="go-btn">Go to O Canada Cars →</a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer__inner">
-    <span class="footer__copy">© 2026 O Canada Cars · OCanadaCars.ca</span>
-    <span>
-      <a href="https://ocanadacars.ca/methodology.html" class="footer__link">Methodology</a>
-      &nbsp;·&nbsp;
-      <a href="https://ocanadacars.ca/disclaimer.html" class="footer__link">Disclaimer</a>
-    </span>
-  </div>
-</footer>
-
-</body>
-</html>
+<header class="site-header"><nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="https://ocanadacars.ca/" aria-label="O Canada Cars home"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#D9261C"/><path d="M14 5.5 13.2 8.5 11.2 7.8 12.2 11 10 9.8 9 11.3 6.5 10.7 7.2 12.8 6 13.8 9.8 16 9.3 17.8 13.3 17.3 13.3 22 14.7 22 14.7 17.3 18.7 17.8 18.2 15.9 22 13.8 20.8 12.8 21.5 10.7 19 11.3 18 9.8 15.8 11 16.8 7.8 14.8 8.5Z" fill="#fff"/></svg>O <em>Canada</em> Cars</a>
+<div class="nav-links"><a href="https://ocanadacars.ca/">Main site</a><a lang="fr-CA" href="index-fr.html">Français</a></div>
+</nav></header>
+<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">A vehicle-origin campaign page</p>
+<h1>Compare origins. Choose with context.</h1>
+<p class="lede">O Canada Cars publishes model-year vehicle records and an origin score when the available evidence supports one. Some configurations found in U.S. filings are labelled <strong>Canadian availability unverified</strong>.</p>
+<div class="actions"><a class="button" href="https://ocanadacars.ca/">Compare a vehicle</a><a href="https://ocanadacars.ca/methodology.html">Read the methodology</a></div>
+</div></section>
+<section class="section"><div class="wrap">
+<h2>What the O Canada Score measures</h2>
+<p>The score compares four manufacturing-origin categories for a model-year record. It is not a measure of Canadian-only parts, jobs supported, vehicle quality, or a specific vehicle’s origin.</p>
+<div class="factors">
+<div class="factor"><strong>Final assembly</strong><span class="points">up to 50 points</span></div>
+<div class="factor"><strong>Combined U.S./Canadian parts content</strong><span class="points">up to 30 points</span></div>
+<div class="factor"><strong>Engine or electric-motor origin</strong><span class="points">up to 10 points</span></div>
+<div class="factor"><strong>Transmission origin</strong><span class="points">up to 10 points</span></div>
+</div>
+<div class="callout"><p><strong>Important:</strong> AALA reports combine U.S. and Canadian parts content; they do not identify the Canadian share. The method, weights, and record-level source notes are published, while source coverage and verification vary by record. Scores are withheld when evidence does not support a precise result.</p></div>
+</div></section>
+<section class="section"><div class="wrap">
+<h2>Check availability and the individual vehicle</h2>
+<p>Records describe supported model years and configurations. They do not confirm that every listed configuration is sold in Canada or identify the origin of a specific vehicle. Read the availability label, then confirm the vehicle’s assembly location with its VIN, the manufacturer, or the dealer.</p>
+<div class="callout"><p>If you choose to avoid U.S.-assembled vehicles, the main site lets you filter them out. The O Canada Score and that filter do not determine tariff exposure or eligibility under CUSMA.</p></div>
+</div></section>
+<section class="section"><div class="wrap">
+<h2>Use the information for your own decision</h2>
+<p>If supporting Canadian manufacturing matters to you, compare the published origin information and its limits. The score does not estimate the jobs or economic impact associated with an individual purchase.</p>
+<p class="muted">O Canada Cars is an independent information resource. Verify details that matter to your purchase directly with the manufacturer or dealer.</p>
+<div class="actions"><a class="button" href="https://ocanadacars.ca/">Visit OCanadaCars.ca</a><a href="https://ocanadacars.ca/disclaimer.html">Read the disclaimer</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="wrap footer-row"><span>© 2026 O Canada Cars</span><span><a href="https://ocanadacars.ca/methodology.html">Methodology</a> · <a href="https://ocanadacars.ca/disclaimer.html">Disclaimer</a> · <a href="index-fr.html" lang="fr-CA">Français</a></span></div></footer>
+</body></html>
